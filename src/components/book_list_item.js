@@ -1,7 +1,7 @@
 import React from 'react';
 
 const BookListItem = ({book, onBookSelect}) => {
-  const imageUrl = book.volumeInfo.imageLinks.thumbnail;
+  const imageUrl = book.volumeInfo.imageLinks !== undefined? book.volumeInfo.imageLinks.thumbnail : '';
 
   return (
     <li onClick={() => onBookSelect(book)} className="list-group-item">

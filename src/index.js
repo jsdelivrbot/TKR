@@ -15,11 +15,11 @@ class App extends Component {
       selectedBook: null
     };
 
-    this.bookSearch("ВПИ Волжский");
+    this.bookSearch("React JS");
   }
 
   bookSearch(term) {
-    const BASE_URL = "https://www.googleapis.com/books/v1/volumes?q=${term}";
+    const BASE_URL = `https://www.googleapis.com/books/v1/volumes?q=${term}`;
     fetch(BASE_URL, {method:'GET'})
       .then(res => res.json())
       .then(
@@ -29,10 +29,7 @@ class App extends Component {
           books: items,
           selectedBook: items[0]
         });
-        console.log(items);
-      },
-      (error) => {
-        console.log(error);
+        console.log(this.state.books);
       });
   }
   render() {
