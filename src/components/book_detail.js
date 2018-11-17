@@ -29,17 +29,17 @@ const BookDetail = ({book}) => {
   }
   return (
     <div className="book-detail col-md-8">
+      <div className="details">
       <a href={book.volumeInfo.infoLink} key={book.etag}>
         <img src={book.volumeInfo.imageLinks !== undefined? book.volumeInfo.imageLinks.thumbnail : ''}/>
       </a>
-      <div className="details">
-        <div>Title: {book.volumeInfo.title}</div>
-        <div>Author: {book.volumeInfo.authors !== undefined ? typeof(book.volumeInfo.authors)  == 'string' ? book.volumeInfo.authors : book.volumeInfo.authors.join(', ') : "нету" }</div>
-        <div>Categories: {book.volumeInfo.categories}</div>
-        <div>Description: {book.volumeInfo.description}</div>
-        <div>Date: {book.volumeInfo.publishedDate}</div>
-        <div>Publisher: {book.volumeInfo.publisher}</div>
-        <div></div>
+      {Title}
+      {Author}
+      {Categories}
+      {Description}
+      {Subtitle}
+      {DatePub}
+      {Publisher}
       </div>
     </div>
   );
